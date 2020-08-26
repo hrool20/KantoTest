@@ -10,8 +10,6 @@
 		2A94EBD1FA3F0A88D9983C38 /* Pods_KantoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A013FD8484E807A1DEA97E /* Pods_KantoTestTests.framework */; };
 		6B9C9BAD3D50DD076280EDA7 /* Pods_KantoTest_KantoTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75684919C49A794C2D276E2B /* Pods_KantoTest_KantoTestUITests.framework */; };
 		8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */; };
-		8E8C4EF424F5EDB70043F36F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF324F5EDB70043F36F /* ViewController.swift */; };
-		8E8C4EF724F5EDB70043F36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF524F5EDB70043F36F /* Main.storyboard */; };
 		8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */; };
 		8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */; };
 		8E8C4EFF24F5EDBD0043F36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */; };
@@ -45,8 +43,6 @@
 		8E5FCE644BF3CF622E8C2DC3 /* Pods-KantoTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTestTests.debug.xcconfig"; path = "Target Support Files/Pods-KantoTestTests/Pods-KantoTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E8C4EF324F5EDB70043F36F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8E8C4EF624F5EDB70043F36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
 		8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E8C4EFE24F5EDBD0043F36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +87,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4002B824F6055E00AB7BD5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */,
+				8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */,
+				8E8C4F0024F5EDBD0043F36F /* Info.plist */,
+				8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */,
+				8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8E4002B924F6067C00AB7BD5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8E4002BB24F6076600AB7BD5 /* Profile */,
+				8E4002BA24F6075E00AB7BD5 /* Splash */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8E4002BA24F6075E00AB7BD5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		8E4002BB24F6076600AB7BD5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8E4002BC24F6079100AB7BD5 /* EditProfile */,
+				8E4002BD24F6079A00AB7BD5 /* ShowProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8E4002BC24F6079100AB7BD5 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		8E4002BD24F6079A00AB7BD5 /* ShowProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowProfile;
+			sourceTree = "<group>";
+		};
 		8E8C4EE324F5EDB70043F36F = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +163,8 @@
 		8E8C4EEE24F5EDB70043F36F /* KantoTest */ = {
 			isa = PBXGroup;
 			children = (
-				8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */,
-				8E8C4EF324F5EDB70043F36F /* ViewController.swift */,
-				8E8C4EF524F5EDB70043F36F /* Main.storyboard */,
-				8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */,
-				8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */,
-				8E8C4F0024F5EDBD0043F36F /* Info.plist */,
-				8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */,
+				8E4002B824F6055E00AB7BD5 /* Main */,
+				8E4002B924F6067C00AB7BD5 /* Scenes */,
 			);
 			path = KantoTest;
 			sourceTree = "<group>";
@@ -279,7 +321,6 @@
 			files = (
 				8E8C4EFF24F5EDBD0043F36F /* LaunchScreen.storyboard in Resources */,
 				8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */,
-				8E8C4EF724F5EDB70043F36F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +448,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8C4EF424F5EDB70043F36F /* ViewController.swift in Sources */,
 				8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */,
 				8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */,
 			);
@@ -445,14 +485,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8E8C4EF524F5EDB70043F36F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8E8C4EF624F5EDB70043F36F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -585,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ4Y5Q73BC;
-				INFOPLIST_FILE = KantoTest/Info.plist;
+				INFOPLIST_FILE = KantoTest/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,7 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ4Y5Q73BC;
-				INFOPLIST_FILE = KantoTest/Info.plist;
+				INFOPLIST_FILE = KantoTest/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
