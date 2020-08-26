@@ -21,6 +21,9 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+*.DS_Store
+.DS_Store
+.idea/
 
 ## Obj-C/Swift specific
 *.hmap
@@ -37,7 +40,7 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
+Packages/
 # Package.pins
 # Package.resolved
 # *.xcodeproj
