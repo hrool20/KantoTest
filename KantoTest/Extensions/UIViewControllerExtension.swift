@@ -17,4 +17,14 @@ extension UIViewController {
     static func get(with bundle: Bundle? = nil) -> Self {
         return Self(nibName: NIBName, bundle: bundle)
     }
+    
+    // MARK: Transition between viewControllers
+    func crossDisolveTransition(to viewController: UIViewController, duration: TimeInterval = 0.6) {
+        guard let window = UIApplication.shared.keyWindow else {
+            fatalError()
+        }
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: duration, options: [.transitionCrossDissolve], animations: nil, completion: nil)
+    }
 }

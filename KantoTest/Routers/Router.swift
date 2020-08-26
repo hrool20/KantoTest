@@ -12,8 +12,14 @@ import UIKit
 final class Router {
     static let shared: Router = Router()
     
+    func getMainTabBar() -> UIViewController {
+        let viewController = MainTabBarController.get()
+        return viewController
+    }
+    
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
+        viewController.splashPresenter = SplashPresenter(view: viewController)
         return viewController
     }
 }
