@@ -14,6 +14,8 @@ final class Router {
     
     func getMainTabBar() -> UIViewController {
         let viewController = MainTabBarController.get()
+        viewController.mainPresenter = MainPresenter(view: viewController)
+        viewController.loadTabBar()
         return viewController
     }
     
