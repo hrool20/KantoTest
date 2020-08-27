@@ -12,6 +12,7 @@ class ShowProfileTableViewController: UITableViewController {
     
     private var user: User?
     private var recordings: [Recording]?
+    private var headerView: ShowProfileHeaderView!
     var showProfilePresenter: ShowProfilePresenterProtocol!
     
     override func viewDidLoad() {
@@ -19,9 +20,18 @@ class ShowProfileTableViewController: UITableViewController {
 
         navigationItem.title = "Profile"
         
+        headerView = ShowProfileHeaderView.get(owner: self)
+        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        headerView.frame = CGRect(origin: .zero, size: size)
+        let view = UIView(frame: headerView.frame)
+        view.addSubview(headerView)
+        
         tableView.backgroundColor = UIColor("#111111")
-        tableView.register(ShowProfileRecordTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordTableViewCell.reuseIdentifier)
+        tableView.register(ShowProfileRecordingTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        tableView.tableHeaderView = view
         tableView.tableFooterView = UIView()
+        tableView.contentInsetAdjustmentBehavior = .never
         
         showProfilePresenter.loadRecordings()
     }
@@ -45,7 +55,7 @@ class ShowProfileTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ShowProfileRecordTableViewCell.reuseIdentifier, for: indexPath) as! ShowProfileRecordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier, for: indexPath) as! ShowProfileRecordingTableViewCell
         cell.recording = recordings?[indexPath.row]
 
         return cell
@@ -57,6 +67,10 @@ class ShowProfileTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 450
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 
 }

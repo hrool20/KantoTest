@@ -26,8 +26,8 @@
 		8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730A9624F6D5130051B88D /* ShowProfileTableViewController.swift */; };
 		8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E730A9724F6D5130051B88D /* ShowProfileTableViewController.xib */; };
 		8E730A9B24F6D6B10051B88D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */; };
-		8E730AA424F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */; };
-		8E730AA524F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */; };
+		8E730AA424F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA224F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift */; };
+		8E730AA524F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E730AA324F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib */; };
 		8E730AA824F6EB780051B88D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA724F6EB780051B88D /* User.swift */; };
 		8E730AAA24F6EBE10051B88D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA924F6EBE10051B88D /* Recording.swift */; };
 		8E730AAC24F6FB410051B88D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */; };
@@ -40,6 +40,8 @@
 		8E8C4EFF24F5EDBD0043F36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */; };
 		8E8C4F0A24F5EDBD0043F36F /* KantoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4F0924F5EDBD0043F36F /* KantoTestTests.swift */; };
 		8E8C4F1524F5EDBD0043F36F /* KantoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4F1424F5EDBD0043F36F /* KantoTestUITests.swift */; };
+		8EB6DB1124F73154008ADC2D /* ShowProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB6DB1024F73154008ADC2D /* ShowProfileHeaderView.swift */; };
+		8EB6DB1324F73163008ADC2D /* ShowProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB6DB1224F73163008ADC2D /* ShowProfileHeaderView.xib */; };
 		A644AFEB017CA77E65571C4D /* Pods_KantoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A630B548CBC7DB427FFFFE1 /* Pods_KantoTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,8 +85,8 @@
 		8E730A9624F6D5130051B88D /* ShowProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileTableViewController.swift; sourceTree = "<group>"; };
 		8E730A9724F6D5130051B88D /* ShowProfileTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileTableViewController.xib; sourceTree = "<group>"; };
 		8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileRecordTableViewCell.swift; sourceTree = "<group>"; };
-		8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileRecordTableViewCell.xib; sourceTree = "<group>"; };
+		8E730AA224F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileRecordingTableViewCell.swift; sourceTree = "<group>"; };
+		8E730AA324F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileRecordingTableViewCell.xib; sourceTree = "<group>"; };
 		8E730AA724F6EB780051B88D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E730AA924F6EBE10051B88D /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
@@ -103,6 +105,8 @@
 		8E8C4F1024F5EDBD0043F36F /* KantoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KantoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4F1424F5EDBD0043F36F /* KantoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KantoTestUITests.swift; sourceTree = "<group>"; };
 		8E8C4F1624F5EDBD0043F36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB6DB1024F73154008ADC2D /* ShowProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileHeaderView.swift; sourceTree = "<group>"; };
+		8EB6DB1224F73163008ADC2D /* ShowProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileHeaderView.xib; sourceTree = "<group>"; };
 		A901AEB19153403C85525122 /* Pods-KantoTest-KantoTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTest-KantoTestUITests.release.xcconfig"; path = "Target Support Files/Pods-KantoTest-KantoTestUITests/Pods-KantoTest-KantoTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B78C4F59C1C3FE37AF5D631F /* Pods-KantoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTest.debug.xcconfig"; path = "Target Support Files/Pods-KantoTest/Pods-KantoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C59B9FEB2A25933D87B433E7 /* Pods-KantoTest-KantoTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTest-KantoTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-KantoTest-KantoTestUITests/Pods-KantoTest-KantoTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,8 +239,10 @@
 		8E730A9D24F6D8E30051B88D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */,
-				8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */,
+				8EB6DB1024F73154008ADC2D /* ShowProfileHeaderView.swift */,
+				8EB6DB1224F73163008ADC2D /* ShowProfileHeaderView.xib */,
+				8E730AA224F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift */,
+				8E730AA324F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -435,9 +441,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E8C4EFF24F5EDBD0043F36F /* LaunchScreen.storyboard in Resources */,
-				8E730AA524F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib in Resources */,
+				8E730AA524F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib in Resources */,
 				8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */,
 				8E4002C624F60ECF00AB7BD5 /* MainTabBarController.xib in Resources */,
+				8EB6DB1324F73163008ADC2D /* ShowProfileHeaderView.xib in Resources */,
 				8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */,
 				8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */,
 			);
@@ -571,6 +578,7 @@
 				8E4002CE24F618C900AB7BD5 /* SplashPresenterProtocol.swift in Sources */,
 				8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */,
 				8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */,
+				8EB6DB1124F73154008ADC2D /* ShowProfileHeaderView.swift in Sources */,
 				8E730A9524F6CC6A0051B88D /* MainTabBarControllerProtocol.swift in Sources */,
 				8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */,
 				8E4002D024F618D400AB7BD5 /* SplashPresenter.swift in Sources */,
@@ -584,7 +592,7 @@
 				8E4002D424F62CFB00AB7BD5 /* UIColorExtension.swift in Sources */,
 				8E4002D224F618E300AB7BD5 /* SplashViewControllerProtocol.swift in Sources */,
 				8E730AAA24F6EBE10051B88D /* Recording.swift in Sources */,
-				8E730AA424F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift in Sources */,
+				8E730AA424F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift in Sources */,
 				8E730AB024F6FE9F0051B88D /* ShowProfilePresenter.swift in Sources */,
 				8E730AA824F6EB780051B88D /* User.swift in Sources */,
 				8E4002D824F63E3D00AB7BD5 /* MainPresenterProtocol.swift in Sources */,

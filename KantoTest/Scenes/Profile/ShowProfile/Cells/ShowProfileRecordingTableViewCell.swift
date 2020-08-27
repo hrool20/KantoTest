@@ -1,5 +1,5 @@
 //
-//  ShowProfileRecordTableViewCell.swift
+//  ShowProfileRecordingTableViewCell.swift
 //  KantoTest
 //
 //  Created by Hugo Andres Rosado on 8/26/20.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ShowProfileRecordTableViewCell: UITableViewCell {
+class ShowProfileRecordingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var parentView: UIView!
     @IBOutlet weak var titleView: UIView!
