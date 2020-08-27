@@ -21,8 +21,6 @@ class ShowProfileTableViewController: UITableViewController {
         navigationItem.title = "Profile"
         
         headerView = ShowProfileHeaderView.get(owner: self)
-        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        headerView.frame = CGRect(origin: .zero, size: size)
         let view = UIView(frame: headerView.frame)
         view.addSubview(headerView)
         
@@ -42,6 +40,20 @@ class ShowProfileTableViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        if let headerView = tableView.tableHeaderView {
+            let height = headerView.systemLayoutSizeFitting(CGSize(width: tableView.bounds.width, height: 0)).height
+            var headerFrame = headerView.frame
+            if height != headerFrame.size.height {
+                headerFrame.size.height = height
+                headerView.frame = headerFrame
+                tableView.tableHeaderView = headerView
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -67,10 +79,6 @@ class ShowProfileTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 450
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
     }
 
 }

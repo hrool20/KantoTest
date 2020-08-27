@@ -10,7 +10,6 @@ import UIKit
 
 class ShowProfileHeaderView: UIView {
 
-    @IBOutlet weak var parentView: UIView!
     @IBOutlet weak var firstBorderView: UIView!
     @IBOutlet weak var secondBorderView: UIView!
     @IBOutlet weak var userImageView: UIImageView!
@@ -58,8 +57,8 @@ class ShowProfileHeaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        parentView.layer.cornerRadius = parentView.bounds.width / 20
-        parentView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        layer.cornerRadius = bounds.width / 20
+        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         [userImageView, firstBorderView, secondBorderView, editProfileButton].forEach { (view) in
             view?.layer.cornerRadius = view!.bounds.height / 2
         }
@@ -71,6 +70,13 @@ class ShowProfileHeaderView: UIView {
     }
     
     @IBAction func didEditProdile(_ sender: UIButton) {
+    }
+    
+    func getHeight() -> CGFloat {
+        let first = 54 + firstBorderView.bounds.height + 10 + userFullNameLabel.bounds.height
+        let second = 4 + usernameLabel.bounds.height + 10 + descriptionTextView.bounds.height
+        let third = 10 + editProfileButton.bounds.height + 10 + socialView.bounds.height + 25
+        return first + second + third
     }
     
 }
