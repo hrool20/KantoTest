@@ -23,6 +23,17 @@
 		8E4002D824F63E3D00AB7BD5 /* MainPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002D724F63E3D00AB7BD5 /* MainPresenterProtocol.swift */; };
 		8E4002DA24F63E6C00AB7BD5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002D924F63E6C00AB7BD5 /* MainPresenter.swift */; };
 		8E730A9524F6CC6A0051B88D /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730A9424F6CC6A0051B88D /* MainTabBarControllerProtocol.swift */; };
+		8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730A9624F6D5130051B88D /* ShowProfileTableViewController.swift */; };
+		8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E730A9724F6D5130051B88D /* ShowProfileTableViewController.xib */; };
+		8E730A9B24F6D6B10051B88D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */; };
+		8E730AA424F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */; };
+		8E730AA524F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */; };
+		8E730AA824F6EB780051B88D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA724F6EB780051B88D /* User.swift */; };
+		8E730AAA24F6EBE10051B88D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AA924F6EBE10051B88D /* Recording.swift */; };
+		8E730AAC24F6FB410051B88D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */; };
+		8E730AAE24F6FE800051B88D /* ShowProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAD24F6FE800051B88D /* ShowProfilePresenterProtocol.swift */; };
+		8E730AB024F6FE9F0051B88D /* ShowProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAF24F6FE9F0051B88D /* ShowProfilePresenter.swift */; };
+		8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AB124F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift */; };
 		8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */; };
 		8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */; };
 		8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */; };
@@ -69,6 +80,17 @@
 		8E4002D924F63E6C00AB7BD5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		8E5FCE644BF3CF622E8C2DC3 /* Pods-KantoTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTestTests.debug.xcconfig"; path = "Target Support Files/Pods-KantoTestTests/Pods-KantoTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E730A9424F6CC6A0051B88D /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
+		8E730A9624F6D5130051B88D /* ShowProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileTableViewController.swift; sourceTree = "<group>"; };
+		8E730A9724F6D5130051B88D /* ShowProfileTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileTableViewController.xib; sourceTree = "<group>"; };
+		8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileRecordTableViewCell.swift; sourceTree = "<group>"; };
+		8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowProfileRecordTableViewCell.xib; sourceTree = "<group>"; };
+		8E730AA724F6EB780051B88D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8E730AA924F6EBE10051B88D /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		8E730AAD24F6FE800051B88D /* ShowProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		8E730AAF24F6FE9F0051B88D /* ShowProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfilePresenter.swift; sourceTree = "<group>"; };
+		8E730AB124F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileTableViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
@@ -168,6 +190,12 @@
 		8E4002BD24F6079A00AB7BD5 /* ShowProfile */ = {
 			isa = PBXGroup;
 			children = (
+				8E730A9D24F6D8E30051B88D /* Cells */,
+				8E730AAF24F6FE9F0051B88D /* ShowProfilePresenter.swift */,
+				8E730AAD24F6FE800051B88D /* ShowProfilePresenterProtocol.swift */,
+				8E730A9624F6D5130051B88D /* ShowProfileTableViewController.swift */,
+				8E730A9724F6D5130051B88D /* ShowProfileTableViewController.xib */,
+				8E730AB124F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift */,
 			);
 			path = ShowProfile;
 			sourceTree = "<group>";
@@ -198,8 +226,28 @@
 				8E4002D524F62D4600AB7BD5 /* StringExtension.swift */,
 				8E4002D324F62CFB00AB7BD5 /* UIColorExtension.swift */,
 				8E4002CB24F60FBB00AB7BD5 /* UIViewControllerExtension.swift */,
+				8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */,
+				8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E730A9D24F6D8E30051B88D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E730AA224F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift */,
+				8E730AA324F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8E730AA624F6EB6A0051B88D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E730AA724F6EB780051B88D /* User.swift */,
+				8E730AA924F6EBE10051B88D /* Recording.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8E8C4EE324F5EDB70043F36F = {
@@ -229,6 +277,7 @@
 			children = (
 				8E4002CA24F60FA700AB7BD5 /* Extensions */,
 				8E4002B824F6055E00AB7BD5 /* Main */,
+				8E730AA624F6EB6A0051B88D /* Models */,
 				8E4002C724F60F3500AB7BD5 /* Routers */,
 				8E4002B924F6067C00AB7BD5 /* Scenes */,
 			);
@@ -386,8 +435,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E8C4EFF24F5EDBD0043F36F /* LaunchScreen.storyboard in Resources */,
+				8E730AA524F6D95B0051B88D /* ShowProfileRecordTableViewCell.xib in Resources */,
 				8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */,
 				8E4002C624F60ECF00AB7BD5 /* MainTabBarController.xib in Resources */,
+				8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */,
 				8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,15 +569,24 @@
 			files = (
 				8E4002C024F60DAC00AB7BD5 /* SplashViewController.swift in Sources */,
 				8E4002CE24F618C900AB7BD5 /* SplashPresenterProtocol.swift in Sources */,
+				8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */,
+				8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */,
 				8E730A9524F6CC6A0051B88D /* MainTabBarControllerProtocol.swift in Sources */,
 				8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */,
 				8E4002D024F618D400AB7BD5 /* SplashPresenter.swift in Sources */,
+				8E730A9B24F6D6B10051B88D /* UIViewExtension.swift in Sources */,
 				8E4002CC24F60FBB00AB7BD5 /* UIViewControllerExtension.swift in Sources */,
 				8E4002C924F60F5900AB7BD5 /* Router.swift in Sources */,
 				8E4002DA24F63E6C00AB7BD5 /* MainPresenter.swift in Sources */,
+				8E730AAC24F6FB410051B88D /* UIImageViewExtension.swift in Sources */,
 				8E4002C524F60ECF00AB7BD5 /* MainTabBarController.swift in Sources */,
+				8E730AAE24F6FE800051B88D /* ShowProfilePresenterProtocol.swift in Sources */,
 				8E4002D424F62CFB00AB7BD5 /* UIColorExtension.swift in Sources */,
 				8E4002D224F618E300AB7BD5 /* SplashViewControllerProtocol.swift in Sources */,
+				8E730AAA24F6EBE10051B88D /* Recording.swift in Sources */,
+				8E730AA424F6D95B0051B88D /* ShowProfileRecordTableViewCell.swift in Sources */,
+				8E730AB024F6FE9F0051B88D /* ShowProfilePresenter.swift in Sources */,
+				8E730AA824F6EB780051B88D /* User.swift in Sources */,
 				8E4002D824F63E3D00AB7BD5 /* MainPresenterProtocol.swift in Sources */,
 				8E4002D624F62D4600AB7BD5 /* StringExtension.swift in Sources */,
 				8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */,

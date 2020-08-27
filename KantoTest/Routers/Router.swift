@@ -19,6 +19,12 @@ final class Router {
         return viewController
     }
     
+    func getShowProfile() -> UIViewController {
+        let viewController = ShowProfileTableViewController.get()
+        viewController.showProfilePresenter = ShowProfilePresenter(view: viewController)
+        return viewController
+    }
+    
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
         viewController.splashPresenter = SplashPresenter(view: viewController)
