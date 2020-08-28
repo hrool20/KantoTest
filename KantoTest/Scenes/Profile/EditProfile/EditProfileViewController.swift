@@ -69,16 +69,7 @@ class EditProfileViewController: UIViewController {
         pickerController.delegate = self
         pickerController.allowsEditing = true
         
-        let imageActionSheet = editProfilePresenter.getActionSheet(galleryClosure: { [weak self] in
-            guard let self = self else { return }
-            pickerController.sourceType = .photoLibrary
-            self.askForPickerAuthorization(pickerController)
-        }) { [weak self] in
-            guard let self = self else { return }
-            pickerController.sourceType = .camera
-            self.askForPickerAuthorization(pickerController)
-        }
-        
+        let imageActionSheet = editProfilePresenter.getActionSheet(pickerController: pickerController)
         present(imageActionSheet, animated: true, completion: nil)
     }
     
@@ -96,6 +87,10 @@ class EditProfileViewController: UIViewController {
 extension EditProfileViewController: EditProfileViewControllerProtocol {
     func goBackToParent() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func presentPickerController(_ pickerController: UIImagePickerController) {
+        present(pickerController, animated: true, completion: nil)
     }
     
     func updateView(_ user: User) {

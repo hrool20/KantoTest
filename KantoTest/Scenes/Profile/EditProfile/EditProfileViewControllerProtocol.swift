@@ -11,5 +11,6 @@ import UIKit
 
 protocol EditProfileViewControllerProtocol: AlertHandlerProtocol {
     func goBackToParent()
+    func presentPickerController(_ pickerController: UIImagePickerController)
     func updateView(_ user: User)
 }

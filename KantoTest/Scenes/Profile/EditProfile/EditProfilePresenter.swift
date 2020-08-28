@@ -18,15 +18,17 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         self.view = view
     }
     
-    func getActionSheet(galleryClosure: @escaping () -> Void, cameraClosure: @escaping () -> Void) -> UIAlertController {
+    func getActionSheet(pickerController: UIImagePickerController) -> UIAlertController {
         let actionSheet = UIAlertController(title: nil,
                                             message: nil,
                                             preferredStyle: .actionSheet)
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default) { (_) in
-            galleryClosure()
+        let galleryAction = UIAlertAction(title: "Gallery", style: .default) { [weak self] (_) in
+            pickerController.sourceType = .photoLibrary
+            self?.askForPickerAuthorization(pickerController)
         }
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
-            cameraClosure()
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] (_) in
+            pickerController.sourceType = .camera
+            self?.askForPickerAuthorization(pickerController)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
@@ -35,6 +37,14 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         }
         
         return actionSheet
+    }
+    
+    private func askForPickerAuthorization(_ pickerController: UIImagePickerController) {
+        pickerController.askForAuthorization(success: { [weak self] in
+            self?.view.presentPickerController(pickerController)
+        }) { [weak self] in
+            self?.view.show(.alert, message: "Access denied.")
+        }
     }
     
     func loadUser(user: User) {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol EditProfilePresenterProtocol {
-    func getActionSheet(galleryClosure: @escaping() -> Void, cameraClosure: @escaping() -> Void) -> UIAlertController
+    func getActionSheet(pickerController: UIImagePickerController) -> UIAlertController
     func loadUser(user: User)
     func saveUser(user: User, name: String?, username: String?, biography: String?, image: UIImage?)
 }
