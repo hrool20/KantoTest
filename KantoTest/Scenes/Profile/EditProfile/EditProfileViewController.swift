@@ -87,8 +87,8 @@ class EditProfileViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.present(pickerController, animated: true, completion: nil)
             }
-        }) {
-            // TODO: Show an alert
+        }) { [weak self] in
+            self?.show(.alert, message: "Access denied.")
         }
     }
 

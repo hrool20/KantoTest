@@ -27,4 +27,31 @@ extension UIViewController {
         window.makeKeyAndVisible()
         UIView.transition(with: window, duration: duration, options: [.transitionCrossDissolve], animations: nil, completion: nil)
     }
+    
+    // MARK: AlertHandlerProtocol
+    func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void)) {
+        let alertController = UIAlertController(title: title ?? "Kanto Test", message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+            closure()
+        }
+        alertController.addAction(okAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes yesTitle: String, no noTitle: String, closure: @escaping(() -> Void)) {
+        let alertController = UIAlertController(title: title ?? "Kanto Test", message: message, preferredStyle: style)
+        let yesAction = UIAlertAction(title: yesTitle, style: .destructive) { (_) in
+            closure()
+        }
+        let noAction = UIAlertAction(title: noTitle, style: .default) { (_) in
+        }
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        alertController.preferredAction = noAction
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

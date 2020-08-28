@@ -46,11 +46,11 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         guard let name = name,
             let username = username,
             let biography = biography else {
-                // TODO: Show an alert
+                view.show(.alert, message: "Some fields empty.")
                 return
         }
         guard image != nil || (name != user.name && username != user.username && biography != user.biography) else {
-            // TODO: Show an alert
+            view.show(.alert, message: "Fields has not changed.")
             return
         }
         

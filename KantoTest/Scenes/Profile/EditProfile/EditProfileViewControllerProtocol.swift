@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol EditProfileViewControllerProtocol {
+protocol EditProfileViewControllerProtocol: AlertHandlerProtocol {
     func goBackToParent()
     func updateView(_ user: User)
 }
