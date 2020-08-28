@@ -58,7 +58,10 @@ class ShowProfileHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        editProfileButton.setTitle(Constants.Localizable.EDIT_PROFILE_TITLE, for: .normal)
+        followersNameLabel.text = Constants.Localizable.FOLLOWERS
+        followedNameLabel.text = Constants.Localizable.FOLLOWED
+        viewsNameLabel.text = Constants.Localizable.VIEWS
     }
     
     override func layoutSubviews() {

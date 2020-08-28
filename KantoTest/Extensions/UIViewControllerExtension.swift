@@ -30,8 +30,8 @@ extension UIViewController {
     
     // MARK: AlertHandlerProtocol
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping(() -> Void)) {
-        let alertController = UIAlertController(title: title ?? "Kanto Test", message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: Constants.Localizable.OK, style: .default) { (_) in
             closure()
         }
         alertController.addAction(okAction)
@@ -41,7 +41,7 @@ extension UIViewController {
     }
     
     func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes yesTitle: String, no noTitle: String, closure: @escaping(() -> Void)) {
-        let alertController = UIAlertController(title: title ?? "Kanto Test", message: message, preferredStyle: style)
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
         let yesAction = UIAlertAction(title: yesTitle, style: .destructive) { (_) in
             closure()
         }

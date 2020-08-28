@@ -27,6 +27,6 @@ extension AlertHandlerProtocol {
     }
     
     func showQuestion(_ style: UIAlertController.Style, message: String, closure: @escaping(() -> Void)) {
-        showQuestion(style, title: nil, message: message, yes: "Yes", no: "No", closure: closure)
+        showQuestion(style, title: nil, message: message, yes: Constants.Localizable.YES, no: Constants.Localizable.NO, closure: closure)
     }
 }

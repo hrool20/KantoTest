@@ -22,15 +22,15 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         let actionSheet = UIAlertController(title: nil,
                                             message: nil,
                                             preferredStyle: .actionSheet)
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default) { [weak self] (_) in
-            pickerController.sourceType = .photoLibrary
-            self?.askForPickerAuthorization(pickerController)
-        }
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] (_) in
+        let cameraAction = UIAlertAction(title: Constants.Localizable.CAMERA, style: .default) { [weak self] (_) in
             pickerController.sourceType = .camera
             self?.askForPickerAuthorization(pickerController)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let galleryAction = UIAlertAction(title: Constants.Localizable.GALLERY, style: .default) { [weak self] (_) in
+            pickerController.sourceType = .photoLibrary
+            self?.askForPickerAuthorization(pickerController)
+        }
+        let cancelAction = UIAlertAction(title: Constants.Localizable.CANCEL, style: .cancel, handler: nil)
         
         [galleryAction, cameraAction, cancelAction].forEach { (alertAction) in
             actionSheet.addAction(alertAction)
@@ -43,7 +43,7 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         pickerController.askForAuthorization(success: { [weak self] in
             self?.view.presentPickerController(pickerController)
         }) { [weak self] in
-            self?.view.show(.alert, message: "Access denied.")
+            self?.view.show(.alert, message: Constants.Localizable.ACCESS_DENIED)
         }
     }
     
@@ -56,11 +56,11 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         guard let name = name,
             let username = username,
             let biography = biography else {
-                view.show(.alert, message: "Some fields empty.")
+                view.show(.alert, message: Constants.Localizable.SOME_FIELDS_EMPTY)
                 return
         }
         guard image != nil || (name != user.name && username != user.username && biography != user.biography) else {
-            view.show(.alert, message: "Fields has not changed.")
+            view.show(.alert, message: Constants.Localizable.FIELDS_NOT_CHANGED)
             return
         }
         

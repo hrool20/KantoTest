@@ -30,7 +30,6 @@ extension UIImagePickerController {
                 case .denied, .notDetermined:
                     failure?()
                 case .restricted:
-                    print("PHPhotoLibrary restricted.")
                     failure?()
                 @unknown default:
                     break

@@ -46,6 +46,7 @@
 		8E7D5EED24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEC24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift */; };
 		8E7D5EEF24F9A53900BA1812 /* UIImagePickerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */; };
 		8E7D5EF124F9B0C900BA1812 /* AlertHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */; };
+		8E7D5EF524F9B5FA00BA1812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D5EF724F9B5FA00BA1812 /* Localizable.strings */; };
 		8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */; };
 		8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */; };
 		8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */; };
@@ -117,6 +118,8 @@
 		8E7D5EEC24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerExtension.swift; sourceTree = "<group>"; };
 		8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerProtocol.swift; sourceTree = "<group>"; };
+		8E7D5EF624F9B5FA00BA1812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E7D5EF824F9B60C00BA1812 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 		8E4002B824F6055E00AB7BD5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8E7D5EF224F9B5D700BA1812 /* Internationalization */,
 				8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */,
 				8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */,
 				8E8C4F0024F5EDBD0043F36F /* Info.plist */,
@@ -304,6 +308,14 @@
 				8E730AA924F6EBE10051B88D /* Recording.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E7D5EF224F9B5D700BA1812 /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				8E7D5EF724F9B5FA00BA1812 /* Localizable.strings */,
+			);
+			path = Internationalization;
 			sourceTree = "<group>";
 		};
 		8E8C4EE324F5EDB70043F36F = {
@@ -474,6 +486,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 8E8C4EE324F5EDB70043F36F;
 			productRefGroup = 8E8C4EED24F5EDB70043F36F /* Products */;
@@ -496,6 +509,7 @@
 				8E730AA524F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib in Resources */,
 				8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */,
 				8E4002C624F60ECF00AB7BD5 /* MainTabBarController.xib in Resources */,
+				8E7D5EF524F9B5FA00BA1812 /* Localizable.strings in Resources */,
 				8E25148324F98F5A00584AEF /* EditProfileViewController.xib in Resources */,
 				8EB6DB1324F73163008ADC2D /* ShowProfileHeaderView.xib in Resources */,
 				8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */,
@@ -697,6 +711,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8E7D5EF724F9B5FA00BA1812 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E7D5EF624F9B5FA00BA1812 /* en */,
+				8E7D5EF824F9B60C00BA1812 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8E8C4EFD24F5EDBD0043F36F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -712,6 +735,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -772,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

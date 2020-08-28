@@ -23,7 +23,12 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Edit Profile"
+        navigationItem.title = Constants.Localizable.EDIT_PROFILE_TITLE
+        
+        nameTextField.placeholder = Constants.Localizable.NAME
+        usernameTextField.placeholder = Constants.Localizable.USERNAME
+        biographyTextField.placeholder = Constants.Localizable.BIOGRAPHY
+        saveButton.setTitle(Constants.Localizable.SAVE, for: .normal)
         
         [nameTextField, usernameTextField, biographyTextField].forEach { (textField) in
             let placehodler = textField?.placeholder ?? ""
@@ -79,7 +84,7 @@ class EditProfileViewController: UIViewController {
                 self?.present(pickerController, animated: true, completion: nil)
             }
         }) { [weak self] in
-            self?.show(.alert, message: "Access denied.")
+            self?.show(.alert, message: Constants.Localizable.ACCESS_DENIED)
         }
     }
 

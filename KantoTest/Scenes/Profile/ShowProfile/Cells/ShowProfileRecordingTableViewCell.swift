@@ -61,12 +61,14 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
             guard reproductions != nil else {
                 return
             }
-            reproductionsLabel.text = "\(reproductions ?? 0) \((reproductions == 1) ? "reproduction" : "reproductions")"
+            reproductionsLabel.text = "\(reproductions ?? 0) \((reproductions == 1) ? Constants.Localizable.REPRODUCTION.lowercased() : Constants.Localizable.REPRODUCTIONS.lowercased())"
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        likeLabel.text = Constants.Localizable.LIKE
         
         NotificationCenter.default.addObserver(self, selector: #selector(didVideoEnd), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
@@ -129,7 +131,7 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
             .font: UIFont.boldSystemFont(ofSize: userNameLabel.font.pointSize)
         ]
         let userName = NSAttributedString(string: name, attributes: attributes)
-        let sang = NSAttributedString(string: " sang ")
+        let sang = NSAttributedString(string: " \(Constants.Localizable.SANG.lowercased()) ")
         let songName = NSAttributedString(string: title, attributes: attributes)
         
         let mutableAttributedString = NSMutableAttributedString()

@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  KantoTest
+
+  Created by Hugo Andres Rosado on 8/28/20.
+  Copyright © 2020 Hrool. All rights reserved.
+*/
+"Kanto Test" = "Kanto";
+"Access denied" = "Acceso denegado";
+"Biography" = "Biografía";
+"Camera" = "Cámara";
+"Cancel" = "Cancelar";
+"There was a problem, please try later" = "Hubo un problema, por favor intente más tarde";
+"Fields has not changed" = "Campos no han sido modificados";
+"Followers" = "Seguidores";
+"Followed" = "Seguidos";
+"Gallery" = "Galería";
+"Like" = "Me gusta";
+"Name" = "Nombre";
+"No" = "No";
+"No user data" = "No existe información del usuario";
+"Ok" = "Ok";
+"Reproduction" = "Reproducción";
+"Reproductions" = "Reproducciones";
+"Sang" = "Cantó";
+"Save" = "Guardar";
+"Some fields empty" = "Algunos campos están vacíos";
+"Username" = "Nombre de usuario";
+"Views" = "Oyentes";
+"Yes" = "Sí";
+/*
+ Titles
+*/
+"Edit Profile" = "Editar Perfil";

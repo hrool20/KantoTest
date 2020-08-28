@@ -30,7 +30,7 @@ final class ShowProfilePresenter: ShowProfilePresenterProtocol {
         if let user = principalRepository.currentUser {
             view.updateUser(user)
         } else {
-            view.show(.alert, message: "No user data.")
+            view.show(.alert, message: Constants.Localizable.NO_USER_DATA)
         }
         
         principalRepository.getRecordings { [weak self] (recordings) in
@@ -38,7 +38,7 @@ final class ShowProfilePresenter: ShowProfilePresenterProtocol {
             if let recordings = recordings {
                 self.view.updateRecordings(recordings)
             } else {
-                self.view.show(.alert, message: "There was a problem, please try later")
+                self.view.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
             }
         }
     }
