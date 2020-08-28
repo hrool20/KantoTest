@@ -10,7 +10,7 @@ import UIKit
 
 class ShowProfileTableViewController: UITableViewController {
     
-    private var user: User?
+    private var user: User!
     private var recordings: [Recording]?
     private var headerView: ShowProfileHeaderView!
     private var secondNavigationBar: UIView?
@@ -24,6 +24,7 @@ class ShowProfileTableViewController: UITableViewController {
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
         headerView = ShowProfileHeaderView.get(owner: self)
+        headerView.delegate = self
         if let topBarSize = showProfilePresenter.getTopBarSize(navigationBarHeight: navigationController?.navigationBar.bounds.height) {
             secondNavigationBar = UIView(frame: CGRect(origin: .zero, size: topBarSize))
             secondNavigationBar?.backgroundColor = tableView.backgroundColor
@@ -33,17 +34,32 @@ class ShowProfileTableViewController: UITableViewController {
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
-        
-        showProfilePresenter.loadInformation()
-        showProfilePresenter.updateSecondNavigationBar(headerHeight: nil, scrollViewY: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
+        
+        showProfilePresenter.loadInformation()
+        showProfilePresenter.updateSecondNavigationBar(headerHeight: nil, scrollViewY: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.isTranslucent = false
+        let navigationBar = navigationController?.navigationBar
+        guard let attribute = navigationBar?.titleTextAttributes?.first(where: { (attribute) -> Bool in
+            attribute.key == .foregroundColor
+        }) else {
+            return
+        }
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: (attribute.value as! UIColor).withAlphaComponent(1)
+        ]
     }
     
     override func viewWillLayoutSubviews() {
@@ -97,7 +113,13 @@ class ShowProfileTableViewController: UITableViewController {
     }
 
 }
-extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol {
+extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol, ShowProfileHeaderViewDelegate {
+    func showEditProfile() {
+        let editProfile = Router.shared.getEditProfile(user: user)
+        editProfile.hidesBottomBarWhenPushed = true
+        navigationController?.show(editProfile, sender: nil)
+    }
+    
     func updateRecordings(_ recordings: [Recording]) {
         self.recordings = recordings
         tableView.reloadData()

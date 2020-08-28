@@ -14,6 +14,8 @@
 		8E25147B24F9727A00584AEF /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */; };
 		8E25147D24F9729300584AEF /* UserDefaultsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */; };
 		8E25147F24F972F800584AEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147E24F972F800584AEF /* Constants.swift */; };
+		8E25148224F98F5A00584AEF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25148024F98F5A00584AEF /* EditProfileViewController.swift */; };
+		8E25148324F98F5A00584AEF /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E25148124F98F5A00584AEF /* EditProfileViewController.xib */; };
 		8E4002C024F60DAC00AB7BD5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002BE24F60DAC00AB7BD5 /* SplashViewController.swift */; };
 		8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4002BF24F60DAC00AB7BD5 /* SplashViewController.xib */; };
 		8E4002C524F60ECF00AB7BD5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002C324F60ECF00AB7BD5 /* MainTabBarController.swift */; };
@@ -39,6 +41,10 @@
 		8E730AAE24F6FE800051B88D /* ShowProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAD24F6FE800051B88D /* ShowProfilePresenterProtocol.swift */; };
 		8E730AB024F6FE9F0051B88D /* ShowProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AAF24F6FE9F0051B88D /* ShowProfilePresenter.swift */; };
 		8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E730AB124F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift */; };
+		8E7D5EE924F996F700BA1812 /* EditProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EE824F996F700BA1812 /* EditProfilePresenterProtocol.swift */; };
+		8E7D5EEB24F9970200BA1812 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEA24F9970200BA1812 /* EditProfilePresenter.swift */; };
+		8E7D5EED24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEC24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift */; };
+		8E7D5EEF24F9A53900BA1812 /* UIImagePickerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */; };
 		8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */; };
 		8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */; };
 		8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */; };
@@ -77,6 +83,8 @@
 		8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E25147E24F972F800584AEF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E25148024F98F5A00584AEF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8E25148124F98F5A00584AEF /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		8E4002BE24F60DAC00AB7BD5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8E4002BF24F60DAC00AB7BD5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E4002C324F60ECF00AB7BD5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 		8E730AAD24F6FE800051B88D /* ShowProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		8E730AAF24F6FE9F0051B88D /* ShowProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfilePresenter.swift; sourceTree = "<group>"; };
 		8E730AB124F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileTableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8E7D5EE824F996F700BA1812 /* EditProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		8E7D5EEA24F9970200BA1812 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		8E7D5EEC24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerControllerExtension.swift; sourceTree = "<group>"; };
 		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
@@ -163,9 +175,9 @@
 		8E25147924F9725A00584AEF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E25147E24F972F800584AEF /* Constants.swift */,
 				8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */,
 				8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */,
-				8E25147E24F972F800584AEF /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +228,11 @@
 		8E4002BC24F6079100AB7BD5 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				8E7D5EEA24F9970200BA1812 /* EditProfilePresenter.swift */,
+				8E7D5EE824F996F700BA1812 /* EditProfilePresenterProtocol.swift */,
+				8E25148024F98F5A00584AEF /* EditProfileViewController.swift */,
+				8E25148124F98F5A00584AEF /* EditProfileViewController.xib */,
+				8E7D5EEC24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -258,9 +275,10 @@
 			children = (
 				8E4002D524F62D4600AB7BD5 /* StringExtension.swift */,
 				8E4002D324F62CFB00AB7BD5 /* UIColorExtension.swift */,
+				8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */,
+				8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */,
 				8E4002CB24F60FBB00AB7BD5 /* UIViewControllerExtension.swift */,
 				8E730A9A24F6D6B10051B88D /* UIViewExtension.swift */,
-				8E730AAB24F6FB410051B88D /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +493,7 @@
 				8E730AA524F6D95B0051B88D /* ShowProfileRecordingTableViewCell.xib in Resources */,
 				8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */,
 				8E4002C624F60ECF00AB7BD5 /* MainTabBarController.xib in Resources */,
+				8E25148324F98F5A00584AEF /* EditProfileViewController.xib in Resources */,
 				8EB6DB1324F73163008ADC2D /* ShowProfileHeaderView.xib in Resources */,
 				8E730A9924F6D5130051B88D /* ShowProfileTableViewController.xib in Resources */,
 				8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */,
@@ -609,17 +628,22 @@
 				8E4002CE24F618C900AB7BD5 /* SplashPresenterProtocol.swift in Sources */,
 				8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */,
 				8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */,
+				8E7D5EEB24F9970200BA1812 /* EditProfilePresenter.swift in Sources */,
 				8E25147824F970E500584AEF /* PrincipalRepositoryProtocol.swift in Sources */,
 				8E25147F24F972F800584AEF /* Constants.swift in Sources */,
 				8EB6DB1124F73154008ADC2D /* ShowProfileHeaderView.swift in Sources */,
 				8E730A9524F6CC6A0051B88D /* MainTabBarControllerProtocol.swift in Sources */,
+				8E7D5EE924F996F700BA1812 /* EditProfilePresenterProtocol.swift in Sources */,
+				8E25148224F98F5A00584AEF /* EditProfileViewController.swift in Sources */,
 				8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */,
 				8E4002D024F618D400AB7BD5 /* SplashPresenter.swift in Sources */,
 				8E730A9B24F6D6B10051B88D /* UIViewExtension.swift in Sources */,
 				8E25147B24F9727A00584AEF /* UserDefaultsHandler.swift in Sources */,
 				8E4002CC24F60FBB00AB7BD5 /* UIViewControllerExtension.swift in Sources */,
 				8E4002C924F60F5900AB7BD5 /* Router.swift in Sources */,
+				8E7D5EEF24F9A53900BA1812 /* UIImagePickerControllerExtension.swift in Sources */,
 				8E4002DA24F63E6C00AB7BD5 /* MainPresenter.swift in Sources */,
+				8E7D5EED24F9970E00BA1812 /* EditProfileViewControllerProtocol.swift in Sources */,
 				8E730AAC24F6FB410051B88D /* UIImageViewExtension.swift in Sources */,
 				8E4002C524F60ECF00AB7BD5 /* MainTabBarController.swift in Sources */,
 				8E730AAE24F6FE800051B88D /* ShowProfilePresenterProtocol.swift in Sources */,

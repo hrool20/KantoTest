@@ -29,7 +29,17 @@ final class Router {
         navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
         return navigationController
+    }
+    
+    func getEditProfile(user: User) -> UIViewController {
+        let viewController = EditProfileViewController.get()
+        viewController.editProfilePresenter = EditProfilePresenter(principalRepository: principalRepository, view: viewController)
+        viewController.user = user
+        return viewController
     }
     
     func getMainTabBar() -> UIViewController {

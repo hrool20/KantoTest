@@ -13,6 +13,7 @@ class User: Codable {
     var name: String
     var username: String
     var imageUrl: String
+    var image: String?
     var biography: String
     var followers: Int
     var followed: Int
@@ -46,6 +47,19 @@ class User: Codable {
                   followers: jsonObject["followers"].intValue,
                   followed: jsonObject["followed"].intValue,
                   views: jsonObject["views"].intValue)
+    }
+    
+    func getImage() -> UIImage? {
+        guard let image = image,
+            let data = Data(base64Encoded: image, options: .ignoreUnknownCharacters) else {
+                return nil
+        }
+        return UIImage(data: data)
+    }
+    
+    func saveImage(_ image: UIImage?) {
+        let data = image?.pngData()
+        self.image = data?.base64EncodedString(options: .lineLength64Characters)
     }
     
     static func buildCollection(fromJSONArray jsonArray: [JSON]) -> [User] {

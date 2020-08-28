@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShowProfileHeaderViewDelegate: class {
+    func showEditProfile()
+}
+
 class ShowProfileHeaderView: UIView {
 
     @IBOutlet weak var firstBorderView: UIView!
@@ -28,12 +32,15 @@ class ShowProfileHeaderView: UIView {
     @IBOutlet weak var viewsLabel: UILabel!
     @IBOutlet weak var viewsNameLabel: UILabel!
     static let reuseIdentifier: String = "recordingHeaderViewCell"
+    weak var delegate: ShowProfileHeaderViewDelegate?
     var user: User? {
         didSet {
             guard let user = user else {
                 return
             }
-            if let imageUrl = URL(string: user.imageUrl) {
+            if let image = user.getImage() {
+                userImageView.image = image
+            } else if let imageUrl = URL(string: user.imageUrl) {
                 userImageView.setImage(with: imageUrl) { [weak self] (_) in
                     self?.layoutSubviews()
                 }
@@ -70,13 +77,7 @@ class ShowProfileHeaderView: UIView {
     }
     
     @IBAction func didEditProdile(_ sender: UIButton) {
+        delegate?.showEditProfile()
     }
-    
-    func getHeight() -> CGFloat {
-        let first = 54 + firstBorderView.bounds.height + 10 + userFullNameLabel.bounds.height
-        let second = 4 + usernameLabel.bounds.height + 10 + descriptionTextView.bounds.height
-        let third = 10 + editProfileButton.bounds.height + 10 + socialView.bounds.height + 25
-        return first + second + third
-    }
-    
+
 }
