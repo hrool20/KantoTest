@@ -80,7 +80,7 @@ class ShowProfileTableViewController: UITableViewController {
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         showProfilePresenter.updateSecondNavigationBar(headerHeight: headerView.bounds.height, scrollViewY: scrollView.contentOffset.y)
-        if scrollView.contentOffset.y - 10 < 0 {
+        if scrollView.contentOffset.y - 100 < 0 {
             scrollView.bounces = false
         } else {
             scrollView.bounces = true

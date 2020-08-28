@@ -27,7 +27,7 @@ final class MainPresenter: MainPresenterProtocol {
         secondTab.tabBarItem.image = #imageLiteral(resourceName: "tab_play")
         secondTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_play_filled")
         
-        let thirdTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getShowProfile())
+        let thirdTab = UIViewController()
         thirdTab.tabBarItem.title = nil
         thirdTab.tabBarItem.image = #imageLiteral(resourceName: "tab_microphone")
         thirdTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_microphone_filled")
@@ -37,7 +37,7 @@ final class MainPresenter: MainPresenterProtocol {
         fourthTab.tabBarItem.image = #imageLiteral(resourceName: "tab_bell")
         fourthTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_bell_filled")
         
-        let fifthTab = UIViewController()
+        let fifthTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getShowProfile())
         fifthTab.tabBarItem.title = nil
         fifthTab.tabBarItem.image = #imageLiteral(resourceName: "tab_profile.png").withRenderingMode(.alwaysOriginal)
         fifthTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_profile_filled").withRenderingMode(.alwaysOriginal)
