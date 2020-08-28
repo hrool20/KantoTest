@@ -7,34 +7,66 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 import UIKit
 
 final class ShowProfilePresenter: ShowProfilePresenterProtocol {
+    var principalRepository: PrincipalRepositoryProtocol
     let view: ShowProfileTableViewControllerProtocol
     
-    init(view: ShowProfileTableViewControllerProtocol) {
+    init(principalRepository: PrincipalRepositoryProtocol, view: ShowProfileTableViewControllerProtocol) {
+        self.principalRepository = principalRepository
         self.view = view
     }
     
-    func loadRecordings() {
-        AF.request("https://www.mocky.io/v2/5e669952310000d2fc23a20e",
-                   method: .get,
-                   parameters: nil,
-                   encoding: JSONEncoding.default,
-                   headers: nil)
-            .responseJSON { [weak self] (response) in
-                guard let self = self else { return }
-                
-                switch response.result {
-                case .failure(_):
-                    self.view.updateRecordings([])
-                case .success(let value):
-                    let jsonObject = JSON(value)
-                    let recordings = Recording.buildCollection(fromJSONArray: jsonObject.arrayValue)
-                    self.view.updateRecordings(recordings)
-                }
+    func getTopBarSize(navigationBarHeight: CGFloat?) -> CGSize? {
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        guard let navigationBarHeight = navigationBarHeight else {
+            return nil
         }
+        return CGSize(width: UIScreen.main.bounds.width, height: statusBarHeight + navigationBarHeight)
+    }
+    
+    func loadInformation() {
+        if let user = principalRepository.currentUser {
+            view.updateUser(user)
+        } else {
+            // TODO: Show an alert.
+        }
+        
+        principalRepository.getRecordings { [weak self] (recordings) in
+            guard let self = self else { return }
+            if let recordings = recordings {
+                self.view.updateRecordings(recordings)
+            } else {
+                // TODO: Show an alert.
+            }
+        }
+    }
+    
+    func updateSecondNavigationBar(headerHeight: CGFloat?, scrollViewY: CGFloat?) {
+        guard let headerHeight = headerHeight, let scrollViewY = scrollViewY else {
+            view.updateSecondNavigationBar(.zero, true, 0)
+            return
+        }
+        
+        let heightLeft: CGFloat = (headerHeight - scrollViewY > 0) ? headerHeight - scrollViewY : 0
+        let beginning: CGFloat = headerHeight / 4
+        
+        let point = CGPoint(x: 0, y: scrollViewY)
+        let isHidden: Bool
+        let alpha: CGFloat
+        
+        if heightLeft < beginning {
+            isHidden = false
+            alpha = 1 - (heightLeft / beginning)
+        } else if heightLeft == 0 {
+            isHidden = false
+            alpha = 1
+        } else {
+            isHidden = true
+            alpha = 0
+        }
+        
+        view.updateSecondNavigationBar(point, isHidden, alpha)
     }
 }

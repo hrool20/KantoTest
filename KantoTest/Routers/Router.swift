@@ -11,6 +11,16 @@ import UIKit
 
 final class Router {
     static let shared: Router = Router()
+    // Handlers
+    private let userDefaultsHandler: UserDefaultsHandlerProtocol
+    // Repositories
+    private let principalRepository: PrincipalRepositoryProtocol
+    
+    init() {
+        userDefaultsHandler = UserDefaultsHandler()
+        
+        principalRepository = PrincipalRepository(userDefaultsHandler: userDefaultsHandler)
+    }
     
     func getDefaultNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
@@ -31,13 +41,13 @@ final class Router {
     
     func getShowProfile() -> UIViewController {
         let viewController = ShowProfileTableViewController.get()
-        viewController.showProfilePresenter = ShowProfilePresenter(view: viewController)
+        viewController.showProfilePresenter = ShowProfilePresenter(principalRepository: principalRepository, view: viewController)
         return viewController
     }
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
-        viewController.splashPresenter = SplashPresenter(view: viewController)
+        viewController.splashPresenter = SplashPresenter(principalRepository: principalRepository, view: viewController)
         return viewController
     }
 }

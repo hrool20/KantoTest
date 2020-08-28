@@ -27,7 +27,7 @@ final class MainPresenter: MainPresenterProtocol {
         secondTab.tabBarItem.image = #imageLiteral(resourceName: "tab_play")
         secondTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_play_filled")
         
-        let thirdTab = Router.shared.getShowProfile()
+        let thirdTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getShowProfile())
         thirdTab.tabBarItem.title = nil
         thirdTab.tabBarItem.image = #imageLiteral(resourceName: "tab_microphone")
         thirdTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_microphone_filled")

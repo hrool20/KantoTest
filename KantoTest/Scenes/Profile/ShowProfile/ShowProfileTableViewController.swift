@@ -13,25 +13,29 @@ class ShowProfileTableViewController: UITableViewController {
     private var user: User?
     private var recordings: [Recording]?
     private var headerView: ShowProfileHeaderView!
+    private var secondNavigationBar: UIView?
     var showProfilePresenter: ShowProfilePresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Profile"
-        
-        headerView = ShowProfileHeaderView.get(owner: self)
-        let view = UIView(frame: headerView.frame)
-        view.addSubview(headerView)
-        
         tableView.backgroundColor = UIColor("#111111")
         tableView.register(ShowProfileRecordingTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
-        tableView.tableHeaderView = view
+        
+        headerView = ShowProfileHeaderView.get(owner: self)
+        if let topBarSize = showProfilePresenter.getTopBarSize(navigationBarHeight: navigationController?.navigationBar.bounds.height) {
+            secondNavigationBar = UIView(frame: CGRect(origin: .zero, size: topBarSize))
+            secondNavigationBar?.backgroundColor = tableView.backgroundColor
+            view.addSubview(secondNavigationBar!)
+        }
+        
+        tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never
         
-        showProfilePresenter.loadRecordings()
+        showProfilePresenter.loadInformation()
+        showProfilePresenter.updateSecondNavigationBar(headerHeight: nil, scrollViewY: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +48,7 @@ class ShowProfileTableViewController: UITableViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+
         if let headerView = tableView.tableHeaderView {
             let height = headerView.systemLayoutSizeFitting(CGSize(width: tableView.bounds.width, height: 0)).height
             var headerFrame = headerView.frame
@@ -53,6 +57,17 @@ class ShowProfileTableViewController: UITableViewController {
                 headerView.frame = headerFrame
                 tableView.tableHeaderView = headerView
             }
+        }
+    }
+    
+    // MARK: ScrollView functions
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        showProfilePresenter.updateSecondNavigationBar(headerHeight: headerView.bounds.height, scrollViewY: scrollView.contentOffset.y)
+        if scrollView.contentOffset.y - 10 < 0 {
+            scrollView.bounces = false
+        } else {
+            scrollView.bounces = true
         }
     }
 
@@ -86,5 +101,20 @@ extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol
     func updateRecordings(_ recordings: [Recording]) {
         self.recordings = recordings
         tableView.reloadData()
+    }
+    
+    func updateSecondNavigationBar(_ point: CGPoint, _ isHidden: Bool, _ alpha: CGFloat) {
+        secondNavigationBar?.frame.origin = point
+        secondNavigationBar?.isHidden = isHidden
+        secondNavigationBar?.alpha = alpha
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white.withAlphaComponent(alpha)
+        ]
+    }
+    
+    func updateUser(_ user: User) {
+        self.user = user
+        headerView.user = user
+        navigationItem.title = user.name
     }
 }

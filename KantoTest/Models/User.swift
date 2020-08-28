@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class User {
+class User: Codable {
     var name: String
     var username: String
     var imageUrl: String

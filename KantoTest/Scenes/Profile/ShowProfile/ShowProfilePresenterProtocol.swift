@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 protocol ShowProfilePresenterProtocol {
-    func loadRecordings()
+    func getTopBarSize(navigationBarHeight: CGFloat?) -> CGSize?
+    func loadInformation()
+    func updateSecondNavigationBar(headerHeight: CGFloat?, scrollViewY: CGFloat?)
 }

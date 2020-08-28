@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2A94EBD1FA3F0A88D9983C38 /* Pods_KantoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A013FD8484E807A1DEA97E /* Pods_KantoTestTests.framework */; };
 		6B9C9BAD3D50DD076280EDA7 /* Pods_KantoTest_KantoTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75684919C49A794C2D276E2B /* Pods_KantoTest_KantoTestUITests.framework */; };
+		8E25147624F970D300584AEF /* PrincipalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147524F970D300584AEF /* PrincipalRepository.swift */; };
+		8E25147824F970E500584AEF /* PrincipalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147724F970E500584AEF /* PrincipalRepositoryProtocol.swift */; };
+		8E25147B24F9727A00584AEF /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */; };
+		8E25147D24F9729300584AEF /* UserDefaultsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */; };
+		8E25147F24F972F800584AEF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25147E24F972F800584AEF /* Constants.swift */; };
 		8E4002C024F60DAC00AB7BD5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002BE24F60DAC00AB7BD5 /* SplashViewController.swift */; };
 		8E4002C124F60DAC00AB7BD5 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4002BF24F60DAC00AB7BD5 /* SplashViewController.xib */; };
 		8E4002C524F60ECF00AB7BD5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4002C324F60ECF00AB7BD5 /* MainTabBarController.swift */; };
@@ -67,6 +72,11 @@
 		6AC7617562628A1422950648 /* Pods-KantoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KantoTest.release.xcconfig"; path = "Target Support Files/Pods-KantoTest/Pods-KantoTest.release.xcconfig"; sourceTree = "<group>"; };
 		75684919C49A794C2D276E2B /* Pods_KantoTest_KantoTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KantoTest_KantoTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A630B548CBC7DB427FFFFE1 /* Pods_KantoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KantoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E25147524F970D300584AEF /* PrincipalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalRepository.swift; sourceTree = "<group>"; };
+		8E25147724F970E500584AEF /* PrincipalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandlerProtocol.swift; sourceTree = "<group>"; };
+		8E25147E24F972F800584AEF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E4002BE24F60DAC00AB7BD5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8E4002BF24F60DAC00AB7BD5 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		8E4002C324F60ECF00AB7BD5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -141,6 +151,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E25147424F970BF00584AEF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8E25147524F970D300584AEF /* PrincipalRepository.swift */,
+				8E25147724F970E500584AEF /* PrincipalRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8E25147924F9725A00584AEF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */,
+				8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */,
+				8E25147E24F972F800584AEF /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8E4002B824F6055E00AB7BD5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,8 +313,10 @@
 				8E4002CA24F60FA700AB7BD5 /* Extensions */,
 				8E4002B824F6055E00AB7BD5 /* Main */,
 				8E730AA624F6EB6A0051B88D /* Models */,
+				8E25147424F970BF00584AEF /* Repositories */,
 				8E4002C724F60F3500AB7BD5 /* Routers */,
 				8E4002B924F6067C00AB7BD5 /* Scenes */,
+				8E25147924F9725A00584AEF /* Utils */,
 			);
 			path = KantoTest;
 			sourceTree = "<group>";
@@ -578,11 +609,14 @@
 				8E4002CE24F618C900AB7BD5 /* SplashPresenterProtocol.swift in Sources */,
 				8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */,
 				8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */,
+				8E25147824F970E500584AEF /* PrincipalRepositoryProtocol.swift in Sources */,
+				8E25147F24F972F800584AEF /* Constants.swift in Sources */,
 				8EB6DB1124F73154008ADC2D /* ShowProfileHeaderView.swift in Sources */,
 				8E730A9524F6CC6A0051B88D /* MainTabBarControllerProtocol.swift in Sources */,
 				8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */,
 				8E4002D024F618D400AB7BD5 /* SplashPresenter.swift in Sources */,
 				8E730A9B24F6D6B10051B88D /* UIViewExtension.swift in Sources */,
+				8E25147B24F9727A00584AEF /* UserDefaultsHandler.swift in Sources */,
 				8E4002CC24F60FBB00AB7BD5 /* UIViewControllerExtension.swift in Sources */,
 				8E4002C924F60F5900AB7BD5 /* Router.swift in Sources */,
 				8E4002DA24F63E6C00AB7BD5 /* MainPresenter.swift in Sources */,
@@ -593,11 +627,13 @@
 				8E4002D224F618E300AB7BD5 /* SplashViewControllerProtocol.swift in Sources */,
 				8E730AAA24F6EBE10051B88D /* Recording.swift in Sources */,
 				8E730AA424F6D95B0051B88D /* ShowProfileRecordingTableViewCell.swift in Sources */,
+				8E25147D24F9729300584AEF /* UserDefaultsHandlerProtocol.swift in Sources */,
 				8E730AB024F6FE9F0051B88D /* ShowProfilePresenter.swift in Sources */,
 				8E730AA824F6EB780051B88D /* User.swift in Sources */,
 				8E4002D824F63E3D00AB7BD5 /* MainPresenterProtocol.swift in Sources */,
 				8E4002D624F62D4600AB7BD5 /* StringExtension.swift in Sources */,
 				8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */,
+				8E25147624F970D300584AEF /* PrincipalRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

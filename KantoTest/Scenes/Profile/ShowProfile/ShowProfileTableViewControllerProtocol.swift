@@ -11,4 +11,6 @@ import UIKit
 
 protocol ShowProfileTableViewControllerProtocol {
     func updateRecordings(_ recordings: [Recording])
+    func updateSecondNavigationBar(_ point: CGPoint, _ isHidden: Bool, _ alpha: CGFloat)
+    func updateUser(_ user: User)
 }
