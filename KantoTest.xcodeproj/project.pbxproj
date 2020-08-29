@@ -182,10 +182,10 @@
 		8E25147924F9725A00584AEF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */,
 				8E25147E24F972F800584AEF /* Constants.swift */,
 				8E25147A24F9727A00584AEF /* UserDefaultsHandler.swift */,
 				8E25147C24F9729300584AEF /* UserDefaultsHandlerProtocol.swift */,
-				8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

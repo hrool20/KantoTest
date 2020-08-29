@@ -47,27 +47,30 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
         }
     }
     
-    func loadUser(user: User) {
-        // TODO: send analytic data
+    func loadUser(user: User?) {
+        guard let user = user else {
+            view.show(.alert, message: Constants.Localizable.NO_USER_DATA)
+            return
+        }
         view.updateView(user)
     }
     
-    func saveUser(user: User, name: String?, username: String?, biography: String?, image: UIImage?) {
+    func saveUser(user: User?, name: String?, username: String?, biography: String?, image: UIImage?) {
         guard let name = name,
             let username = username,
             let biography = biography else {
                 view.show(.alert, message: Constants.Localizable.SOME_FIELDS_EMPTY)
                 return
         }
-        guard image != nil || name != user.name || username != user.username || biography != user.biography else {
+        guard image != nil || name != user?.name || username != user?.username || biography != user?.biography else {
             view.show(.alert, message: Constants.Localizable.FIELDS_NOT_CHANGED)
             return
         }
         
-        user.name = name
-        user.username = username
-        user.biography = biography
-        user.saveImage(image)
+        user?.name = name
+        user?.username = username
+        user?.biography = biography
+        user?.saveImage(image)
         principalRepository.currentUser = user
         
         view.goBackToParent()

@@ -10,7 +10,7 @@ import UIKit
 
 class ShowProfileTableViewController: UITableViewController {
     
-    private var user: User!
+    private var user: User?
     private var recordings: [Recording]?
     private var headerView: ShowProfileHeaderView!
     private var secondNavigationBar: UIView?
@@ -19,18 +19,17 @@ class ShowProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.backgroundColor = UIColor("#111111")
-        tableView.register(ShowProfileRecordingTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier)
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
-        
         headerView = ShowProfileHeaderView.get(owner: self)
         headerView.delegate = self
         if let topBarSize = showProfilePresenter.getTopBarSize(navigationBarHeight: navigationController?.navigationBar.bounds.height) {
             secondNavigationBar = UIView(frame: CGRect(origin: .zero, size: topBarSize))
-            secondNavigationBar?.backgroundColor = tableView.backgroundColor
+            secondNavigationBar?.backgroundColor = navigationController?.navigationBar.barTintColor
             view.addSubview(secondNavigationBar!)
         }
         
+        tableView.register(ShowProfileRecordingTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier)
+        tableView.backgroundColor = UIColor("#111111")
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
         tableView.contentInsetAdjustmentBehavior = .never

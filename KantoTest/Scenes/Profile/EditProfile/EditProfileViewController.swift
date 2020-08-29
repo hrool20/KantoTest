@@ -18,7 +18,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     private var newImage: UIImage?
     var editProfilePresenter: EditProfilePresenterProtocol!
-    var user: User!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

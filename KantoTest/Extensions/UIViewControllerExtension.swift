@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+extension UIViewController: AlertHandlerProtocol {
     private static var NIBName: String {
         return String(describing: self)
     }

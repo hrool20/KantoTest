@@ -35,7 +35,7 @@ final class Router {
         return navigationController
     }
     
-    func getEditProfile(user: User) -> UIViewController {
+    func getEditProfile(user: User?) -> UIViewController {
         let viewController = EditProfileViewController.get()
         viewController.editProfilePresenter = EditProfilePresenter(principalRepository: principalRepository, view: viewController)
         viewController.user = user
