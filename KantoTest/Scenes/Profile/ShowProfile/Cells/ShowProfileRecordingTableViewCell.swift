@@ -27,7 +27,6 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
     @IBOutlet weak var reproductionsLabel: UILabel!
     @IBOutlet weak var playIconView: UIView!
     @IBOutlet weak var playImageView: UIImageView!
-    @IBOutlet weak var playView: UIView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
@@ -53,7 +52,7 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
             songNameLabel.text = recording.title
             reproductions = recording.reproductions
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didPlayOrPauseVideo))
-            playView.addGestureRecognizer(tapGesture)
+            videoOptionsView.addGestureRecognizer(tapGesture)
         }
     }
     private var reproductions: Int! {
@@ -105,12 +104,12 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
     }
     
     private func playVideo() {
-        if playView.tag == 0 {
-            playView.tag = 1
+        if videoOptionsView.tag == 0 {
+            videoOptionsView.tag = 1
             playIconView.isHidden = true
             playerLayer?.player?.play()
         } else {
-            playView.tag = 0
+            videoOptionsView.tag = 0
             playIconView.isHidden = false
             playerLayer?.player?.pause()
         }
@@ -122,7 +121,7 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
         if let songImageUrl = URL(string: recording?.previewImageUrl ?? "") {
             videoImageView.setImage(with: songImageUrl)
         }
-        playView.tag = 0
+        videoOptionsView.tag = 0
         playIconView.isHidden = false
     }
     
