@@ -9,6 +9,11 @@
 import UIKit
 import AVFoundation
 
+protocol SPRecordingTableViewCellDelegate: class {
+    func didVideoStarts(id: String?, player: AVPlayer?)
+    func showAlert(message: String)
+}
+
 class ShowProfileRecordingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var parentView: UIView!
@@ -31,7 +36,20 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     static let reuseIdentifier: String = "recordingViewCell"
+    weak var delegate: SPRecordingTableViewCellDelegate?
+    private var isVideoPlaying: Bool!
     private var playerLayer: AVPlayerLayer?
+    private var player: AVPlayer?
+    private var timeObserver: Any?
+    private var reproductions: Int! {
+        didSet {
+            guard reproductions != nil else {
+                return
+            }
+            recording?.reproductions = reproductions
+            reproductionsLabel.text = "\(reproductions ?? 0) \((reproductions == 1) ? Constants.Localizable.REPRODUCTION.lowercased() : Constants.Localizable.REPRODUCTIONS.lowercased())"
+        }
+    }
     var recording: Recording? {
         didSet {
             guard let recording = recording else {
@@ -55,21 +73,17 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
             videoOptionsView.addGestureRecognizer(tapGesture)
         }
     }
-    private var reproductions: Int! {
-        didSet {
-            guard reproductions != nil else {
-                return
-            }
-            reproductionsLabel.text = "\(reproductions ?? 0) \((reproductions == 1) ? Constants.Localizable.REPRODUCTION.lowercased() : Constants.Localizable.REPRODUCTIONS.lowercased())"
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        player = nil
+        playerLayer = nil
+        isVideoPlaying = false
+        
         likeLabel.text = Constants.Localizable.LIKE
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didVideoEnd), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didVideoEnds), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     
     override func layoutSubviews() {
@@ -86,61 +100,63 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         videoProgressView.progress = 0.0
+        
+        didVideoEnds()
     }
     
     @objc private func didPlayOrPauseVideo() {
         guard let video = recording?.recordViewUrl,
             let videoUrl = URL(string: video) else {
+                delegate?.showAlert(message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
                 return
         }
-        guard playerLayer != nil else {
-            let player = AVPlayer(url: videoUrl)
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer?.frame = videoImageView.bounds
-            playerLayer?.videoGravity = .resizeAspectFill
-            videoImageView.image = nil
-            videoImageView.layer.addSublayer(playerLayer!)
-            playVideo()
-            recording?.reproductions += 1
-            reproductions += 1
-            
-            let interval = CMTime(value: 1, timescale: 2)
-            player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] (progress) in
-                guard let self = self, let duration = player.currentItem?.duration else { return }
-                let progressSeconds = CMTimeGetSeconds(progress)
-                let durationSeconds = CMTimeGetSeconds(duration)
-                self.videoProgressView.progress = Float(progressSeconds / durationSeconds)
-                
-                if self.videoProgressView.progress == 1 {
-                    self.videoProgressView.progress = 0
-                }
-            }
-            return
+        if playerLayer == nil {
+            loadPlayerLayer(url: videoUrl)
         }
-        
-        playVideo()
-    }
-    
-    private func playVideo() {
-        if videoOptionsView.tag == 0 {
-            videoOptionsView.tag = 1
-            playIconView.isHidden = true
-            playerLayer?.player?.play()
-        } else {
-            videoOptionsView.tag = 0
-            playIconView.isHidden = false
+        if isVideoPlaying {
             playerLayer?.player?.pause()
+        } else {
+            playerLayer?.player?.play()
         }
+        playIconView.isHidden = !isVideoPlaying
+        isVideoPlaying = !isVideoPlaying
     }
     
-    @objc func didVideoEnd() {
+    private func loadPlayerLayer(url: URL) {
+        player = AVPlayer(url: url)
+        let interval = CMTime(value: 1, timescale: 2)
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] (progress) in
+            guard let self = self, let duration = self.player?.currentItem?.duration else { return }
+            let progressSeconds = CMTimeGetSeconds(progress)
+            let durationSeconds = CMTimeGetSeconds(duration)
+            self.videoProgressView.progress = Float(progressSeconds / durationSeconds)
+
+            if self.videoProgressView.progress == 1 {
+                self.videoProgressView.progress = 0
+            }
+        }
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.frame = videoImageView.bounds
+        playerLayer?.videoGravity = .resizeAspectFill
+        
+        videoImageView.layer.addSublayer(playerLayer!)
+        videoImageView.image = nil
+        reproductions += 1
+        delegate?.didVideoStarts(id: recording?.id, player: player)
+    }
+    
+    @objc func didVideoEnds() {
+        if let timeObserver = timeObserver {
+            player?.removeTimeObserver(timeObserver)
+        }
         playerLayer?.removeFromSuperlayer()
+        player = nil
         playerLayer = nil
         if let songImageUrl = URL(string: recording?.previewImageUrl ?? "") {
             videoImageView.setImage(with: songImageUrl)
         }
-        videoOptionsView.tag = 0
         playIconView.isHidden = false
+        isVideoPlaying = false
     }
     
     private func getTitle(_ name: String, _ title: String) -> NSAttributedString {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ShowProfileTableViewController: UITableViewController {
     
@@ -14,6 +15,7 @@ class ShowProfileTableViewController: UITableViewController {
     private var recordings: [Recording]?
     private var headerView: ShowProfileHeaderView!
     private var secondNavigationBar: UIView?
+    private var player: AVPlayer?
     var showProfilePresenter: ShowProfilePresenterProtocol!
     
     override func viewDidLoad() {
@@ -96,6 +98,7 @@ class ShowProfileTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier, for: indexPath) as! ShowProfileRecordingTableViewCell
+        cell.delegate = self
         cell.recording = recordings?[indexPath.row]
 
         return cell
@@ -110,13 +113,7 @@ class ShowProfileTableViewController: UITableViewController {
     }
 
 }
-extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol, ShowProfileHeaderViewDelegate {
-    func showEditProfile() {
-        let editProfile = Router.shared.getEditProfile(user: user)
-        editProfile.hidesBottomBarWhenPushed = true
-        navigationController?.show(editProfile, sender: nil)
-    }
-    
+extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol, ShowProfileHeaderViewDelegate, SPRecordingTableViewCellDelegate {
     func updateRecordings(_ recordings: [Recording]) {
         self.recordings = recordings
         tableView.reloadData()
@@ -135,5 +132,50 @@ extension ShowProfileTableViewController: ShowProfileTableViewControllerProtocol
         self.user = user
         headerView.user = user
         navigationItem.title = user.name
+    }
+    
+    // MARK: ShowProfileHeaderViewDelegate
+    
+    func showEditProfile() {
+        let editProfile = Router.shared.getEditProfile(user: user)
+        editProfile.hidesBottomBarWhenPushed = true
+        navigationController?.show(editProfile, sender: nil)
+    }
+    
+    // MARK: SPRecordingTableViewCellDelegate
+    
+    func didVideoStarts(id: String?, player: AVPlayer?) {
+        guard let index = recordings?.firstIndex(where: { (recording) -> Bool in
+            return recording.id == id
+        }), let recordings = recordings else {
+            show(.alert, message: Constants.Localizable.VIDEO_NOT_AVAILABLE)
+            return
+        }
+        
+        self.player?.pause()
+        self.player = nil
+        self.player = player
+        
+        var array: [IndexPath] = []
+        if index - 2 >= 0 {
+            array.append(IndexPath(item: index - 2, section: 0))
+            array.append(IndexPath(item: index - 1, section: 0))
+        } else if index - 1 >= 0 {
+            array.append(IndexPath(item: index - 1, section: 0))
+        }
+        if index + 2 < recordings.count {
+            array.append(IndexPath(item: index + 2, section: 0))
+            array.append(IndexPath(item: index + 1, section: 0))
+        } else if index + 1 < recordings.count {
+            array.append(IndexPath(item: index + 1, section: 0))
+        }
+        
+        tableView.beginUpdates()
+        tableView.reloadRows(at: array, with: .fade)
+        tableView.endUpdates()
+    }
+    
+    func showAlert(message: String) {
+        show(.alert, message: message)
     }
 }

@@ -36,6 +36,7 @@ struct Constants {
         static let SOME_FIELDS_EMPTY = NSLocalizedString("Some fields empty", comment: "")
         static let UPDATE_PHOTO = NSLocalizedString("Update Photo", comment: "")
         static let USERNAME = NSLocalizedString("Username", comment: "")
+        static let VIDEO_NOT_AVAILABLE = NSLocalizedString("Video not available", comment: "")
         static let VIEWS = NSLocalizedString("Views", comment: "")
         static let YES = NSLocalizedString("Yes", comment: "")
         // Titles

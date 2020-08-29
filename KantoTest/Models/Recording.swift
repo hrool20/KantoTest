@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Recording {
+    var id: String
     var user: User
     var title: String
     var recordViewUrl: String
@@ -17,6 +18,7 @@ class Recording {
     var reproductions: Int
     
     init() {
+        id = UUID().uuidString
         user = User()
         title = ""
         recordViewUrl = ""
@@ -25,6 +27,7 @@ class Recording {
     }
     
     init(user: User, title: String, recordViewUrl: String, previewImageUrl: String, reproductions: Int) {
+        id = UUID().uuidString
         self.user = user
         self.title = title
         self.recordViewUrl = recordViewUrl
