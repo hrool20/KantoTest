@@ -149,6 +149,7 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
         if let timeObserver = timeObserver {
             player?.removeTimeObserver(timeObserver)
         }
+        player?.pause()
         playerLayer?.removeFromSuperlayer()
         player = nil
         playerLayer = nil
@@ -163,8 +164,11 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: userNameLabel.font.pointSize)
         ]
+        let sangAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: userNameLabel.font.pointSize, weight: .light)
+        ]
         let userName = NSAttributedString(string: name, attributes: attributes)
-        let sang = NSAttributedString(string: " \(Constants.Localizable.SANG.lowercased()) ")
+        let sang = NSAttributedString(string: " \(Constants.Localizable.SANG.lowercased()) ", attributes: sangAttributes)
         let songName = NSAttributedString(string: title, attributes: attributes)
         
         let mutableAttributedString = NSMutableAttributedString()
