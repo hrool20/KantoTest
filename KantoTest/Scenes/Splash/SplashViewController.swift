@@ -10,7 +10,7 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
-    @IBOutlet weak var kantoLabel: UILabel!
+    @IBOutlet weak var kantoImageView: UIImageView!
     var splashPresenter: SplashPresenterProtocol!
     
     override func viewDidLoad() {
