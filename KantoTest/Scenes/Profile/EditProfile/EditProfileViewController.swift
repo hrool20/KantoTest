@@ -10,6 +10,7 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var updatePhotoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -45,12 +46,14 @@ class EditProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        UIApplication.shared.keyWindow?.rootViewController?.view.backgroundColor = scrollView.backgroundColor
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        UIApplication.shared.keyWindow?.rootViewController?.view.backgroundColor = nil
         navigationController?.navigationBar.topItem?.backBarButtonItem = nil
     }
     

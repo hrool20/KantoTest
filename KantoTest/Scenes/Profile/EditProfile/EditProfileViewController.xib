@@ -13,6 +13,7 @@
                 <outlet property="biographyTextField" destination="0gG-1j-1zP" id="xvc-qb-lyz"/>
                 <outlet property="nameTextField" destination="4Wc-cL-sgq" id="5Yg-Oa-gfD"/>
                 <outlet property="saveButton" destination="gvL-VP-4UZ" id="3Sr-58-GpL"/>
+                <outlet property="scrollView" destination="YWJ-TR-y77" id="OfM-QO-iaR"/>
                 <outlet property="updatePhotoButton" destination="koO-fq-4S9" id="w7L-Iz-McR"/>
                 <outlet property="userImageView" destination="oFS-hL-PhM" id="gVj-zJ-KXk"/>
                 <outlet property="usernameTextField" destination="nnT-Qf-mxu" id="tXr-vz-tNJ"/>
