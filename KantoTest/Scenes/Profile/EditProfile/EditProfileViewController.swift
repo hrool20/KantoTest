@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var biographyTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     private var newImage: UIImage?
+    private var gradientLayer: CAGradientLayer!
     var editProfilePresenter: EditProfilePresenterProtocol!
     var user: User?
     
@@ -31,6 +32,13 @@ class EditProfileViewController: UIViewController {
         usernameTextField.placeholder = Constants.Localizable.USERNAME
         biographyTextField.placeholder = Constants.Localizable.BIOGRAPHY
         saveButton.setTitle(Constants.Localizable.SAVE, for: .normal)
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor("#6A4BF3")?.cgColor ?? UIColor.clear.cgColor,
+            UIColor("#9646F5")?.cgColor ?? UIColor.clear.cgColor
+        ]
+        gradientLayer.locations = [0.0, 0.7]
+        saveButton.layer.insertSublayer(gradientLayer, at: 0)
         
         [nameTextField, usernameTextField, biographyTextField].forEach { (textField) in
             let placehodler = textField?.placeholder ?? ""
@@ -58,6 +66,7 @@ class EditProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        gradientLayer.frame = saveButton.bounds
         [userImageView, updatePhotoButton, saveButton].forEach { (view) in
             view?.layer.cornerRadius = view!.bounds.height / 2
         }
