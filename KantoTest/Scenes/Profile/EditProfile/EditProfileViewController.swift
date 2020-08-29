@@ -25,6 +25,7 @@ class EditProfileViewController: UIViewController {
 
         navigationItem.title = Constants.Localizable.EDIT_PROFILE_TITLE
         
+        updatePhotoButton.setTitle(Constants.Localizable.UPDATE_PHOTO, for: .normal)
         nameTextField.placeholder = Constants.Localizable.NAME
         usernameTextField.placeholder = Constants.Localizable.USERNAME
         biographyTextField.placeholder = Constants.Localizable.BIOGRAPHY
