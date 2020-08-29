@@ -24,9 +24,9 @@ final class SplashPresenter: SplashPresenterProtocol {
                             username: "@wesleyschultz",
                             imageUrl: "https://www.thesun.co.uk/wp-content/uploads/2019/05/NINTCHDBPICT000490476354.jpg",
                             biography: "Writer & singer of The Lumineers.",
-                            followers: 100000,
+                            followers: 100_000,
                             followed: 1000,
-                            views: 3000000)
+                            views: 3_000_000)
             principalRepository.currentUser = user
         }
         

@@ -47,6 +47,7 @@
 		8E7D5EEF24F9A53900BA1812 /* UIImagePickerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */; };
 		8E7D5EF124F9B0C900BA1812 /* AlertHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */; };
 		8E7D5EF524F9B5FA00BA1812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E7D5EF724F9B5FA00BA1812 /* Localizable.strings */; };
+		8E7D5EFA24F9D78D00BA1812 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D5EF924F9D78D00BA1812 /* IntExtension.swift */; };
 		8E8C4EF024F5EDB70043F36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */; };
 		8E8C4EFA24F5EDB70043F36F /* KantoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C4EF824F5EDB70043F36F /* KantoTest.xcdatamodeld */; };
 		8E8C4EFC24F5EDBD0043F36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		8E7D5EF024F9B0C900BA1812 /* AlertHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E7D5EF624F9B5FA00BA1812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E7D5EF824F9B60C00BA1812 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E7D5EF924F9D78D00BA1812 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		8E4002CA24F60FA700AB7BD5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E7D5EF924F9D78D00BA1812 /* IntExtension.swift */,
 				8E4002D524F62D4600AB7BD5 /* StringExtension.swift */,
 				8E4002D324F62CFB00AB7BD5 /* UIColorExtension.swift */,
 				8E7D5EEE24F9A53900BA1812 /* UIImagePickerControllerExtension.swift */,
@@ -646,6 +649,7 @@
 				8E730AB224F6FEB00051B88D /* ShowProfileTableViewControllerProtocol.swift in Sources */,
 				8E730A9824F6D5130051B88D /* ShowProfileTableViewController.swift in Sources */,
 				8E7D5EEB24F9970200BA1812 /* EditProfilePresenter.swift in Sources */,
+				8E7D5EFA24F9D78D00BA1812 /* IntExtension.swift in Sources */,
 				8E25147824F970E500584AEF /* PrincipalRepositoryProtocol.swift in Sources */,
 				8E25147F24F972F800584AEF /* Constants.swift in Sources */,
 				8EB6DB1124F73154008ADC2D /* ShowProfileHeaderView.swift in Sources */,

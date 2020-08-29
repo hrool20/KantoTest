@@ -49,9 +49,9 @@ class ShowProfileHeaderView: UIView {
             usernameLabel.text = user.username
             descriptionTextView.text = user.biography
             
-            followersLabel.text = "\(user.followers)"
-            followedLabel.text = "\(user.followed)"
-            viewsLabel.text = "\(user.views)"
+            followersLabel.text = user.followers.useAbbreviation()
+            followedLabel.text = user.followed.useAbbreviation()
+            viewsLabel.text = user.views.useAbbreviation()
         }
     }
     
