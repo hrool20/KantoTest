@@ -49,6 +49,11 @@ final class Router {
         return viewController
     }
     
+    func getOtherScene() -> UIViewController {
+        let viewController = OtherViewController.get()
+        return viewController
+    }
+    
     func getShowProfile() -> UIViewController {
         let viewController = ShowProfileTableViewController.get()
         viewController.showProfilePresenter = ShowProfilePresenter(principalRepository: principalRepository, view: viewController)

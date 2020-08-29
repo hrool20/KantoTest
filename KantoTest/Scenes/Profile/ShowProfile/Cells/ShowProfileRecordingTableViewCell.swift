@@ -82,6 +82,12 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
         playImageView.tintColor = .white
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        videoProgressView.progress = 0.0
+    }
+    
     @objc private func didPlayOrPauseVideo() {
         guard let video = recording?.recordViewUrl,
             let videoUrl = URL(string: video) else {

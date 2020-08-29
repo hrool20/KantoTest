@@ -34,14 +34,16 @@ class MainTabBarController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        tabBar.layer.shadowRadius = 6.0
-        tabBar.layer.shadowColor = UIColor.gray.cgColor
+        tabBar.layer.shadowRadius = 5.0
+        tabBar.layer.shadowColor = UIColor.darkGray.cgColor
         tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         tabBar.layer.shadowOpacity = 0.8
         tabBar.layer.masksToBounds = false
     }
     
     func loadTabBar() {
+        view.backgroundColor = UIColor("#111111")
+        tabBar.isTranslucent = false
         tabBar.barTintColor = UIColor("#111111")
         tabBar.unselectedItemTintColor = .white
         tabBar.tintColor = .white

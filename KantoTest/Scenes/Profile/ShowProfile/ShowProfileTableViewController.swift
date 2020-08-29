@@ -29,10 +29,8 @@ class ShowProfileTableViewController: UITableViewController {
         
         tableView.register(ShowProfileRecordingTableViewCell.getNIB(), forCellReuseIdentifier: ShowProfileRecordingTableViewCell.reuseIdentifier)
         tableView.backgroundColor = UIColor("#111111")
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
-        tableView.contentInsetAdjustmentBehavior = .never
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -17,22 +17,22 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func getViewControllers() -> [UIViewController] {
-        let firstTab = UIViewController()
+        let firstTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getOtherScene())
         firstTab.tabBarItem.title = nil
         firstTab.tabBarItem.image = #imageLiteral(resourceName: "tab_signal.png")
         firstTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_signal.png")
         
-        let secondTab = UIViewController()
+        let secondTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getOtherScene())
         secondTab.tabBarItem.title = nil
         secondTab.tabBarItem.image = #imageLiteral(resourceName: "tab_play")
         secondTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_play_filled")
         
-        let thirdTab = UIViewController()
+        let thirdTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getOtherScene())
         thirdTab.tabBarItem.title = nil
         thirdTab.tabBarItem.image = #imageLiteral(resourceName: "tab_microphone")
         thirdTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_microphone_filled")
         
-        let fourthTab = UIViewController()
+        let fourthTab = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getOtherScene())
         fourthTab.tabBarItem.title = nil
         fourthTab.tabBarItem.image = #imageLiteral(resourceName: "tab_bell")
         fourthTab.tabBarItem.selectedImage = #imageLiteral(resourceName: "tab_bell_filled")
