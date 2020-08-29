@@ -37,5 +37,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>By accepting you will be able to take and upload photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>By accepting you will be able to upload photos from your photo gallery.</string>
 </dict>
 </plist>
