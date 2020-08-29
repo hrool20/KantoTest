@@ -24,7 +24,7 @@ final class Router {
     
     func getDefaultNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.barTintColor = .clear
+        navigationController.navigationBar.barTintColor = UIColor("#111111")
         navigationController.navigationBar.tintColor = .white
         navigationController.navigationBar.barStyle = .black
         navigationController.navigationBar.shadowImage = UIImage()

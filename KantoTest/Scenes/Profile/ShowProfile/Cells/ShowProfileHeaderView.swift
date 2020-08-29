@@ -73,8 +73,8 @@ class ShowProfileHeaderView: UIView {
             view?.layer.cornerRadius = view!.bounds.height / 2
         }
         [firstBorderView, secondBorderView].forEach { (view) in
-            view?.layer.borderWidth = 1.0
-            view?.layer.borderColor = (view == firstBorderView) ? UIColor("#A279F9")?.cgColor : UIColor("#7E4DF4")?.cgColor
+            view?.layer.borderWidth = 2.0
+            view?.layer.borderColor = (view == firstBorderView) ? UIColor("#7E4DF4")?.cgColor : UIColor("#A279F9")?.cgColor
         }
         socialView.layer.cornerRadius = socialView.bounds.height / 5
     }

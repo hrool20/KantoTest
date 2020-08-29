@@ -59,7 +59,7 @@ final class EditProfilePresenter: EditProfilePresenterProtocol {
                 view.show(.alert, message: Constants.Localizable.SOME_FIELDS_EMPTY)
                 return
         }
-        guard image != nil || (name != user.name && username != user.username && biography != user.biography) else {
+        guard image != nil || name != user.name || username != user.username || biography != user.biography else {
             view.show(.alert, message: Constants.Localizable.FIELDS_NOT_CHANGED)
             return
         }
