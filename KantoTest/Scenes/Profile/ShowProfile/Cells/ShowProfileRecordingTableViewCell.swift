@@ -97,6 +97,18 @@ class ShowProfileRecordingTableViewCell: UITableViewCell {
             playVideo()
             recording?.reproductions += 1
             reproductions += 1
+            
+            let interval = CMTime(value: 1, timescale: 2)
+            player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] (progress) in
+                guard let self = self, let duration = player.currentItem?.duration else { return }
+                let progressSeconds = CMTimeGetSeconds(progress)
+                let durationSeconds = CMTimeGetSeconds(duration)
+                self.videoProgressView.progress = Float(progressSeconds / durationSeconds)
+                
+                if self.videoProgressView.progress == 1 {
+                    self.videoProgressView.progress = 0
+                }
+            }
             return
         }
         
