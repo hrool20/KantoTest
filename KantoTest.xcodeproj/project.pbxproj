@@ -126,7 +126,7 @@
 		8E7D5EF924F9D78D00BA1812 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		8E7D5EFE24FAC53500BA1812 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		8E7D5EFF24FAC53500BA1812 /* OtherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherViewController.xib; sourceTree = "<group>"; };
-		8E8C4EEC24F5EDB70043F36F /* KantoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KantoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E8C4EEC24F5EDB70043F36F /* Kanto Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kanto Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8C4EEF24F5EDB70043F36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8C4EF924F5EDB70043F36F /* KantoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KantoTest.xcdatamodel; sourceTree = "<group>"; };
 		8E8C4EFB24F5EDBD0043F36F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 		8E8C4EED24F5EDB70043F36F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E8C4EEC24F5EDB70043F36F /* KantoTest.app */,
+				8E8C4EEC24F5EDB70043F36F /* Kanto Test.app */,
 				8E8C4F0524F5EDBD0043F36F /* KantoTestTests.xctest */,
 				8E8C4F1024F5EDBD0043F36F /* KantoTestUITests.xctest */,
 			);
@@ -431,7 +431,7 @@
 			);
 			name = KantoTest;
 			productName = KantoTest;
-			productReference = 8E8C4EEC24F5EDB70043F36F /* KantoTest.app */;
+			productReference = 8E8C4EEC24F5EDB70043F36F /* Kanto Test.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8E8C4F0424F5EDBD0043F36F /* KantoTestTests */ = {
@@ -882,7 +882,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pe.hrool.KantoTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kanto Test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -903,7 +903,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pe.hrool.KantoTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kanto Test";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

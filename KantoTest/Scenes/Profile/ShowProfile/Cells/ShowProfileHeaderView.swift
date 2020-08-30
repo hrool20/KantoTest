@@ -32,6 +32,7 @@ class ShowProfileHeaderView: UIView {
     @IBOutlet weak var viewsLabel: UILabel!
     @IBOutlet weak var viewsNameLabel: UILabel!
     static let reuseIdentifier: String = "recordingHeaderViewCell"
+    private var gradientLayer: CAGradientLayer!
     weak var delegate: ShowProfileHeaderViewDelegate?
     var user: User? {
         didSet {
@@ -58,6 +59,14 @@ class ShowProfileHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor("#6A4BF3")?.cgColor ?? UIColor.clear.cgColor,
+            UIColor("#9646F5")?.cgColor ?? UIColor.clear.cgColor
+        ]
+        gradientLayer.locations = [0.0, 0.7]
+        layer.insertSublayer(gradientLayer, at: 0)
+        
         editProfileButton.setTitle(Constants.Localizable.EDIT_PROFILE_TITLE, for: .normal)
         followersNameLabel.text = Constants.Localizable.FOLLOWERS
         followedNameLabel.text = Constants.Localizable.FOLLOWED
@@ -67,8 +76,11 @@ class ShowProfileHeaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = bounds.width / 20
-        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        gradientLayer.frame = bounds
+        [layer, gradientLayer].forEach { (layer) in
+            layer?.cornerRadius = bounds.width / 20
+            layer?.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        }
         [userImageView, firstBorderView, secondBorderView, editProfileButton].forEach { (view) in
             view?.layer.cornerRadius = view!.bounds.height / 2
         }

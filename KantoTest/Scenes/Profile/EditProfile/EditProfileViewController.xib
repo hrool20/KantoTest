@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="KantoTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="Kanto_Test" customModuleProvider="target">
             <connections>
                 <outlet property="biographyTextField" destination="0gG-1j-1zP" id="xvc-qb-lyz"/>
                 <outlet property="nameTextField" destination="4Wc-cL-sgq" id="5Yg-Oa-gfD"/>
@@ -81,7 +81,7 @@
                                         </textField>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-VP-4UZ">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-VP-4UZ">
                                     <rect key="frame" x="148" y="338" width="118" height="50"/>
                                     <color key="backgroundColor" red="0.41568627949999998" green="0.2941176593" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>

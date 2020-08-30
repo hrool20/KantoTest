@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="KantoTest" customModuleProvider="target">
             <connections>
-                <outlet property="kantoLabel" destination="8se-oY-D3h" id="Jiv-RW-aJd"/>
+                <outlet property="kantoImageView" destination="H5E-aj-vXX" id="lpa-95-VH8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,22 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kanto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8se-oY-D3h">
-                    <rect key="frame" x="152.5" y="424" width="109.5" height="48"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                    <color key="textColor" red="0.41568627450000001" green="0.29411764709999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kanto_test" translatesAutoresizingMaskIntoConstraints="NO" id="H5E-aj-vXX">
+                    <rect key="frame" x="82" y="348" width="250" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="29N-O1-5q6"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="8se-oY-D3h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BjA-Qv-3Xp"/>
-                <constraint firstItem="8se-oY-D3h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="RaU-C2-jC1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8se-oY-D3h" secondAttribute="trailing" constant="40" id="XYg-Nz-Yhd"/>
-                <constraint firstItem="8se-oY-D3h" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qpe-1p-c7z"/>
+                <constraint firstItem="H5E-aj-vXX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gvz-T1-QuU"/>
+                <constraint firstItem="H5E-aj-vXX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Qlc-ZB-DaI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="145"/>
         </view>
     </objects>
+    <resources>
+        <image name="kanto_test" width="764" height="200"/>
+    </resources>
 </document>
