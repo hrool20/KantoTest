@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/hrool20/KantoTest/develop/KantoTest/Main/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5%402x.png" alt="Markdownify" width="200">
+  <img src="https://raw.githubusercontent.com/hrool20/KantoTest/master/KantoTest/Main/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5%402x.png" alt="Markdownify" width="200">
   <br>
   Kanto Test
   <br>
