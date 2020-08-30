@@ -6,7 +6,6 @@ target 'KantoTest' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
-  # pod 'HexColors'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage', '~> 5.0'
   pod 'SwiftyJSON', '~> 4.0'

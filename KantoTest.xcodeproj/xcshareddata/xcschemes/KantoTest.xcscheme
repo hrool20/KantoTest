@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E8C4EEB24F5EDB70043F36F"
-               BuildableName = "KantoTest.app"
+               BuildableName = "Kanto Test.app"
                BlueprintName = "KantoTest"
                ReferencedContainer = "container:KantoTest.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E8C4EEB24F5EDB70043F36F"
-            BuildableName = "KantoTest.app"
+            BuildableName = "Kanto Test.app"
             BlueprintName = "KantoTest"
             ReferencedContainer = "container:KantoTest.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E8C4EEB24F5EDB70043F36F"
-            BuildableName = "KantoTest.app"
+            BuildableName = "Kanto Test.app"
             BlueprintName = "KantoTest"
             ReferencedContainer = "container:KantoTest.xcodeproj">
          </BuildableReference>
